@@ -35,10 +35,7 @@
     <div class="row">
       <!-- Assignment Name column -->
       <div class="column">
-        <p>
-          Assignment Name <br />
-          (Optional)
-        </p>
+        <p>Assignment Name<br />(Optional)</p>
         <!-- TODO: Make the padding below each text field bigger, they are too close -->
         <div class="assignmentName">
           <input type="text" id="assignmentName1" size="15" placeholder="Ex: Exam 1" />
@@ -53,6 +50,7 @@
           <input type="text" id="assignmentName10" size="15" />
         </div>
       </div>
+
       <!-- Assignment Grade column -->
       <div class="column">
         <p>Assignment Grade</p>
@@ -68,6 +66,7 @@
         <input type="text" id="grade9" size="5" style="margin-left: 49px; text-align: right" />
         <input type="text" id="grade10" size="5" style="margin-left: 49px; text-align: right" />
       </div>
+
       <!-- Assignment Weight column -->
       <div class="column">
         <p>Assignment Weight</p>
@@ -88,10 +87,61 @@
       <br />
       <label for="desiredGrade">Desired Grade:</label>
       <input type="text" id="desiredGrade" size="5" style="text-align: right" />
-      <button onclick="calculateGrade()">Calculate Average Grade Needed</button>
+      <button onclick="calculateGrade(
+        document.getElementById('grade1').value,
+        document.getElementById('grade2').value,
+        document.getElementById('grade3').value,
+        document.getElementById('grade4').value,
+        document.getElementById('grade5').value,
+        document.getElementById('grade6').value,
+        document.getElementById('grade7').value,
+        document.getElementById('grade8').value,
+        document.getElementById('grade9').value,
+        document.getElementById('grade10').value,
 
-      <p>Average grade needed to get desired grade:</p>
+        document.getElementById('gradeWeight1').value,
+        document.getElementById('gradeWeight2').value,
+        document.getElementById('gradeWeight3').value,
+        document.getElementById('gradeWeight4').value,
+        document.getElementById('gradeWeight5').value,
+        document.getElementById('gradeWeight6').value,
+        document.getElementById('gradeWeight7').value,
+        document.getElementById('gradeWeight8').value,
+        document.getElementById('gradeWeight9').value,
+        document.getElementById('gradeWeight10').value
+      )">Calculate Average Grade Needed</button>
+
+      <p>Average grade needed on remaining assignments to get desired grade:</p>
       <p id="gradeNeeded"></p>
     </div>
+
+    <script type="text/javascript">
+      function calculateGrade(
+        grade1,
+        grade2,
+        grade3,
+        grade4,
+        grade5,
+        grade6,
+        grade7,
+        grade8,
+        grade9,
+        grade10,
+        gradeWeight1,
+        gradeWeight2,
+        gradeWeight3,
+        gradeWeight4,
+        gradeWeight5,
+        gradeWeight6,
+        gradeWeight7,
+        gradeWeight8,
+        gradeWeight9,
+        gradeWeight10
+      )
+      {
+
+        document.getElementById("gradeNeeded").innerHTML = grade1;
+      }
+    </script>
   </body>
 </html>
