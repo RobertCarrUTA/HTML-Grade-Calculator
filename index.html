@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    /* This creates our columns and allows them to float next to each other */
+    .column {
+      float: left;
+      width: 33.33%;
+      padding: 5px;
+      padding-right: 30px;
+    }
+
+    /*
+      This will bring our columns closer together. 
+      Without it, our columns will space out evenly on the screen.
+    */
+    .row {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    input {
+      margin-bottom: 10px;
+      display: block;
+    }
+  </style>
+
+  <body>
+    <h1>Online Grade Calculator</h1>
+    <!-- Making the columns of the page -->
+    <div class="row">
+      <!-- Assignment Name column -->
+      <div class="column">
+        <p>
+          Assignment Name <br />
+          (Optional)
+        </p>
+        <!-- TODO: Make the padding below each text field bigger, they are too close -->
+        <div class="assignmentName">
+          <input type="text" id="assignmentName1" size="15" placeholder="Ex: Exam 1" />
+          <input type="text" id="assignmentName2" size="15" placeholder="Ex: Homework 1" />
+          <input type="text" id="assignmentName3" size="15" />
+          <input type="text" id="assignmentName4" size="15" />
+          <input type="text" id="assignmentName5" size="15" />
+          <input type="text" id="assignmentName6" size="15" />
+          <input type="text" id="assignmentName7" size="15" />
+          <input type="text" id="assignmentName8" size="15" />
+          <input type="text" id="assignmentName9" size="15" />
+          <input type="text" id="assignmentName10" size="15" />
+        </div>
+      </div>
+      <!-- Assignment Grade column -->
+      <div class="column">
+        <p>Assignment Grade</p>
+        <br />
+        <input type="text" id="grade1" size="5" placeholder="Ex: 92.5" style="margin-left: 49px; text-align: right" />
+        <input type="text" id="grade2" size="5" style="margin-left: 49px; text-align: right" />
+        <input type="text" id="grade3" size="5" style="margin-left: 49px; text-align: right" />
+        <input type="text" id="grade4" size="5" style="margin-left: 49px; text-align: right" />
+        <input type="text" id="grade5" size="5" style="margin-left: 49px; text-align: right" />
+        <input type="text" id="grade6" size="5" style="margin-left: 49px; text-align: right" />
+        <input type="text" id="grade7" size="5" style="margin-left: 49px; text-align: right" />
+        <input type="text" id="grade8" size="5" style="margin-left: 49px; text-align: right" />
+        <input type="text" id="grade9" size="5" style="margin-left: 49px; text-align: right" />
+        <input type="text" id="grade10" size="5" style="margin-left: 49px; text-align: right" />
+      </div>
+      <!-- Assignment Weight column -->
+      <div class="column">
+        <p>Assignment Weight</p>
+        <br />
+        <input type="text" id="gradeWeight1" size="5" placeholder="Ex: 20" style="margin-left: 55px; text-align: right" />
+        <input type="text" id="gradeWeight2" size="5" style="margin-left: 55px; text-align: right" />
+        <input type="text" id="gradeWeight3" size="5" style="margin-left: 55px; text-align: right" />
+        <input type="text" id="gradeWeight4" size="5" style="margin-left: 55px; text-align: right" />
+        <input type="text" id="gradeWeight5" size="5" style="margin-left: 55px; text-align: right" />
+        <input type="text" id="gradeWeight6" size="5" style="margin-left: 55px; text-align: right" />
+        <input type="text" id="gradeWeight7" size="5" style="margin-left: 55px; text-align: right" />
+        <input type="text" id="gradeWeight8" size="5" style="margin-left: 55px; text-align: right" />
+        <input type="text" id="gradeWeight9" size="5" style="margin-left: 55px; text-align: right" />
+        <input type="text" id="gradeWeight10" size="5" style="margin-left: 55px; text-align: right" />
+      </div>
+
+      <!-- Below br caused column width to shrink -->
+      <br />
+      <label for="desiredGrade">Desired Grade:</label>
+      <input type="text" id="desiredGrade" size="5" style="text-align: right" />
+      <button onclick="calculateGrade()">Calculate Average Grade Needed</button>
+
+      <p>Average grade needed to get desired grade:</p>
+      <p id="gradeNeeded"></p>
+    </div>
+  </body>
+</html>
