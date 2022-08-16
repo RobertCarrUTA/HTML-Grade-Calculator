@@ -1,6 +1,41 @@
 <!DOCTYPE html>
 <html>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    /* This creates our columns and allows them to float next to each other */
+    .column {
+      float: left;
+      width: 33.33%;
+      padding: 10px;
+    }
+
+    /*
+      This will bring our columns closer together. 
+      Without it, our columns will space out evenly on the screen.
+    */
+    .row {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  </style>
   <body>
     <h1>Online Grade Calculator</h1>
+
+    <!-- Making the columns of the page -->
+    <div class="row">
+      <div class="column">
+        <p>Assignment Name (Optional)</p>
+      </div>
+      <div class="column">
+        <p>Assignment Grade</p>
+      </div>
+      <div class="column">
+        <p>Assignment Weight</p>
+      </div>
+    </div>
   </body>
 </html>
