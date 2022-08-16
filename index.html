@@ -10,6 +10,7 @@
       float: left;
       width: 33.33%;
       padding: 10px;
+      padding-right: 30px;
     }
 
     /*
@@ -22,19 +23,38 @@
       clear: both;
     }
   </style>
+
   <body>
     <h1>Online Grade Calculator</h1>
-
     <!-- Making the columns of the page -->
     <div class="row">
+      <!-- Assignment Name column -->
       <div class="column">
         <p>Assignment Name (Optional)</p>
+        <!-- TODO: Make the padding below each text field bigger, they are too close -->
+        <input type="text" id="assignmentName1" size="15" />
       </div>
+      <!-- Assignment Grade column -->
       <div class="column">
         <p>Assignment Grade</p>
+        <br />
+        <input
+          type="text"
+          id="grade1"
+          size="5"
+          style="margin-left: 49px; text-align: right"
+        />
       </div>
+      <!-- Assignment Weight column -->
       <div class="column">
         <p>Assignment Weight</p>
+        <br />
+        <input
+          type="text"
+          id="gradeWeight1"
+          size="5"
+          style="margin-left: 55px; text-align: right"
+        />
       </div>
     </div>
   </body>
