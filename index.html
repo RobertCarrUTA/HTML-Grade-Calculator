@@ -195,6 +195,15 @@
           style="margin-left: 55px; text-align: right"
         />
       </div>
+
+      <!-- Below br caused column width to shrink -->
+      <br />
+      <label for="desiredGrade">Desired Grade:</label>
+      <input type="text" id="desiredGrade" size="5" style="text-align: right" />
+      <button onclick="calculateGrade()">Calculate Average Grade Needed</button>
+
+      <p>Average grade needed to get desired grade:</p>
+      <p id="gradeNeeded"></p>
     </div>
   </body>
 </html>
