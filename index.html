@@ -221,7 +221,9 @@
         document.getElementById('gradeWeight7').value,
         document.getElementById('gradeWeight8').value,
         document.getElementById('gradeWeight9').value,
-        document.getElementById('gradeWeight10').value
+        document.getElementById('gradeWeight10').value,
+
+        document.getElementById('desiredGrade').value
       )"
       >
         Calculate Average Grade Needed
@@ -255,7 +257,8 @@
         gradeWeight7,
         gradeWeight8,
         gradeWeight9,
-        gradeWeight10
+        gradeWeight10,
+        desiredGrade
       ) {
         // We need to set values to fill in based on if the user entered that data
         var calculateValueArray = new Array(10);
@@ -389,24 +392,24 @@
           }
         }
 
-        console.log("Numerator " + numerator);
-        console.log("Denominator " + denominator);
+        console.log("Numerator/100: " + numerator/100);
+        console.log("Denominator/100: " + (1 - (denominator/100)));
 
         // To find out the students current average grade, we have to do the following:
         // ((weight1 * grade1) + (weight * grade2) + ... )/ (weight1 + weight2 + ...)
         var currentAverage = numerator / denominator;
 
-        console.log(currentAverage);
+        console.log("Current Average/100: " + currentAverage/100);
         document.getElementById("currentAverage").innerHTML =
           currentAverage.toFixed(2);
 
-        // Determining what grade you need on the rest of the assignments
-        let desiredGrade = 80; // Change this to use input later
+        desiredGrade = parseFloat(desiredGrade);
+        console.log("Desired Grade/100: " + desiredGrade/100)
 
-        temp = desiredGrade - currentAverage;
+        let requiredGrade = (((desiredGrade/100) - (1 - (denominator / 100)) * (currentAverage/100)) / (denominator / 100)) * 100;
+        console.log("Required Grade: " + requiredGrade);
 
-        document.getElementById("gradeNeeded").innerHTML =
-          "Currently not available";
+        document.getElementById("gradeNeeded").innerHTML = requiredGrade;
       }
     </script>
   </body>
