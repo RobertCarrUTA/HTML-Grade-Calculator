@@ -227,6 +227,9 @@
         Calculate Average Grade Needed
       </button>
 
+      <p>Current Average:</p>
+      <p id="currentAverage"></p>
+
       <p>Average grade needed on remaining assignments to get desired grade:</p>
       <p id="gradeNeeded"></p>
     </div>
@@ -285,6 +288,9 @@
         if (isNaN(parseFloat(grade3)) && isNaN(parseFloat(gradeWeight3))) {
           console.log("Inputs not valid in row three.");
         } else {
+          grade3 = parseFloat(grade3);
+          gradeWeight3 = parseFloat(gradeWeight3);
+          calculateValueArray[1] = grade2 * gradeWeight2;
           calculateValueArray[2] = grade3 * gradeWeight3;
           denominator = denominator + gradeWeight3;
           count++;
@@ -293,6 +299,9 @@
         if (isNaN(parseFloat(grade4)) && isNaN(parseFloat(gradeWeight4))) {
           console.log("Inputs not valid in row four.");
         } else {
+          grade4 = parseFloat(grade4);
+          gradeWeight4 = parseFloat(gradeWeight4);
+          calculateValueArray[1] = grade2 * gradeWeight2;
           calculateValueArray[3] = grade4 * gradeWeight4;
           denominator = denominator + gradeWeight4;
           count++;
@@ -301,6 +310,9 @@
         if (isNaN(parseFloat(grade5)) && isNaN(parseFloat(gradeWeight5))) {
           console.log("Inputs not valid in row five.");
         } else {
+          grade5 = parseFloat(grade5);
+          gradeWeight5 = parseFloat(gradeWeight5);
+          calculateValueArray[1] = grade2 * gradeWeight2;
           calculateValueArray[4] = grade5 * gradeWeight5;
           denominator = denominator + gradeWeight5;
           count++;
@@ -309,6 +321,9 @@
         if (isNaN(parseFloat(grade6)) && isNaN(parseFloat(gradeWeight6))) {
           console.log("Inputs not valid in row six.");
         } else {
+          grade6 = parseFloat(grade6);
+          gradeWeight6 = parseFloat(gradeWeight6);
+          calculateValueArray[1] = grade2 * gradeWeight2;
           calculateValueArray[5] = grade6 * gradeWeight6;
           denominator = denominator + gradeWeight6;
           count++;
@@ -317,6 +332,9 @@
         if (isNaN(parseFloat(grade7)) && isNaN(parseFloat(gradeWeight7))) {
           console.log("Inputs not valid in row seven.");
         } else {
+          grade7 = parseFloat(grade7);
+          gradeWeight7 = parseFloat(gradeWeight7);
+          calculateValueArray[1] = grade2 * gradeWeight2;
           calculateValueArray[6] = grade7 * gradeWeight7;
           denominator += gradeWeight7;
           count++;
@@ -325,6 +343,9 @@
         if (isNaN(parseFloat(grade8)) && isNaN(parseFloat(gradeWeight8))) {
           console.log("Inputs not valid in row eight.");
         } else {
+          grade8 = parseFloat(grade8);
+          gradeWeight8 = parseFloat(gradeWeight8);
+          calculateValueArray[1] = grade2 * gradeWeight2;
           calculateValueArray[7] = grade8 * gradeWeight8;
           denominator += gradeWeight8;
           count++;
@@ -333,6 +354,9 @@
         if (isNaN(parseFloat(grade9)) && isNaN(parseFloat(gradeWeight9))) {
           console.log("Inputs not valid in row nine.");
         } else {
+          grade9 = parseFloat(grade9);
+          gradeWeight9 = parseFloat(gradeWeight9);
+          calculateValueArray[1] = grade2 * gradeWeight2;
           calculateValueArray[8] = grade9 * gradeWeight9;
           denominator += gradeWeight9;
           count++;
@@ -341,6 +365,9 @@
         if (isNaN(parseFloat(grade10)) && isNaN(parseFloat(gradeWeight10))) {
           console.log("Inputs not valid in row ten.");
         } else {
+          grade10 = parseFloat(grade10);
+          gradeWeight10 = parseFloat(gradeWeight10);
+          calculateValueArray[1] = grade2 * gradeWeight2;
           calculateValueArray[9] = grade10 * gradeWeight10;
           denominator += gradeWeight10;
           count++;
@@ -370,8 +397,16 @@
         var currentAverage = numerator / denominator;
 
         console.log(currentAverage);
+        document.getElementById("currentAverage").innerHTML =
+          currentAverage.toFixed(2);
 
-        document.getElementById("gradeNeeded").innerHTML = currentAverage;
+        // Determining what grade you need on the rest of the assignments
+        let desiredGrade = 80; // Change this to use input later
+
+        temp = desiredGrade - currentAverage;
+
+        document.getElementById("gradeNeeded").innerHTML =
+          "Currently not available";
       }
     </script>
   </body>
